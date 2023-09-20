@@ -1,0 +1,680 @@
+[
+    {
+        "id": "ad8005ae4650a3a8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b0b03a4dfc7ad924",
+        "type": "inject",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "c35b626fa43dbce4"
+            ]
+        ]
+    },
+    {
+        "id": "c35b626fa43dbce4",
+        "type": "OpcUa-Item",
+        "z": "ad8005ae4650a3a8",
+        "item": "ns=2;i=1",
+        "datatype": "String",
+        "value": "",
+        "name": "AverageVoltage",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "f93dc83aa1ea18ce"
+            ]
+        ]
+    },
+    {
+        "id": "f93dc83aa1ea18ce",
+        "type": "OpcUa-Client",
+        "z": "ad8005ae4650a3a8",
+        "endpoint": "ad5eec934e46c1d5",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "",
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "7e16c32842a4173e",
+                "379bc51f9669a619"
+            ]
+        ]
+    },
+    {
+        "id": "7e16c32842a4173e",
+        "type": "debug",
+        "z": "ad8005ae4650a3a8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "379bc51f9669a619",
+        "type": "ui_gauge",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "group": "e39f9c2121fa5f1b",
+        "order": 1,
+        "width": 8,
+        "height": 2,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "0e8c2387b2c00c0a",
+        "type": "inject",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 700,
+        "wires": [
+            [
+                "4f5c650dcaf9dcd3"
+            ]
+        ]
+    },
+    {
+        "id": "4f5c650dcaf9dcd3",
+        "type": "OpcUa-Item",
+        "z": "ad8005ae4650a3a8",
+        "item": "ns=2;i=1",
+        "datatype": "Double",
+        "value": "",
+        "name": "AverageVoltage",
+        "x": 320,
+        "y": 700,
+        "wires": [
+            [
+                "e7cb7d619a0bdea3"
+            ]
+        ]
+    },
+    {
+        "id": "e7cb7d619a0bdea3",
+        "type": "OpcUa-Client",
+        "z": "ad8005ae4650a3a8",
+        "endpoint": "aa45ad6991e00160",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": "0",
+        "maxMessageSize": "0",
+        "receiveBufferSize": "0",
+        "sendBufferSize": "0",
+        "name": "",
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "af3bf7e1deda820f",
+                "baf1d5764d7ca2eb",
+                "8df8fa1c425158ff"
+            ]
+        ]
+    },
+    {
+        "id": "af3bf7e1deda820f",
+        "type": "debug",
+        "z": "ad8005ae4650a3a8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "baf1d5764d7ca2eb",
+        "type": "ui_gauge",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "group": "e39f9c2121fa5f1b",
+        "order": 2,
+        "width": 7,
+        "height": 2,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "90585098d05bc488",
+        "type": "OpcUa-Item",
+        "z": "ad8005ae4650a3a8",
+        "item": "ns=2;i=2",
+        "datatype": "Double",
+        "value": "",
+        "name": "time",
+        "x": 350,
+        "y": 760,
+        "wires": [
+            [
+                "8e040cabdab4792f"
+            ]
+        ]
+    },
+    {
+        "id": "8e040cabdab4792f",
+        "type": "OpcUa-Client",
+        "z": "ad8005ae4650a3a8",
+        "endpoint": "aa45ad6991e00160",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "",
+        "x": 540,
+        "y": 760,
+        "wires": [
+            [
+                "5702a0fa02a0145f"
+            ]
+        ]
+    },
+    {
+        "id": "5702a0fa02a0145f",
+        "type": "debug",
+        "z": "ad8005ae4650a3a8",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "40c3d87275eb5b6c",
+        "type": "mqtt in",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "topic": "testtopic",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "506a385c5d153cfa",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 760,
+        "wires": [
+            [
+                "90585098d05bc488"
+            ]
+        ]
+    },
+    {
+        "id": "590c7d2bb1adcfe7",
+        "type": "ui_slider",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "e39f9c2121fa5f1b",
+        "order": 5,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 820,
+        "wires": [
+            [
+                "90585098d05bc488"
+            ]
+        ]
+    },
+    {
+        "id": "4c85d11434796038",
+        "type": "mqtt out",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "topic": "testtopic",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "506a385c5d153cfa",
+        "x": 720,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "5ddecca1d160f046",
+        "type": "mqtt in",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "topic": "testtopic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "506a385c5d153cfa",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 340,
+        "wires": [
+            [
+                "b20c38af1f6ca792"
+            ]
+        ]
+    },
+    {
+        "id": "b20c38af1f6ca792",
+        "type": "OpcUa-Item",
+        "z": "ad8005ae4650a3a8",
+        "item": "ns=2;i=2",
+        "datatype": "Double",
+        "value": "",
+        "name": "time",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "189d4f6e646976e3"
+            ]
+        ]
+    },
+    {
+        "id": "a456bf8e43645a8a",
+        "type": "ui_slider",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "e39f9c2121fa5f1b",
+        "order": 6,
+        "width": 7,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "b20c38af1f6ca792"
+            ]
+        ]
+    },
+    {
+        "id": "8df8fa1c425158ff",
+        "type": "ui_chart",
+        "z": "ad8005ae4650a3a8",
+        "name": "",
+        "group": "e39f9c2121fa5f1b",
+        "order": 8,
+        "width": 15,
+        "height": 4,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7700",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 710,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "189d4f6e646976e3",
+        "type": "OpcUa-Client",
+        "z": "ad8005ae4650a3a8",
+        "endpoint": "ad5eec934e46c1d5",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "",
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "7e16c32842a4173e"
+            ]
+        ]
+    },
+    {
+        "id": "b357543bcaf9a0e9",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 3,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "86c51df836a8d51f",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 4,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "8ae32d04767c764c",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 7,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "7ff4f2dab96a85db",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 9,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "14f0593020a5f009",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 10,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "797b798ffe5cfbb6",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 11,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "c4d73c601ed3cb44",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 12,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "f05d959c3704c09c",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5fb6c5fc271a6b4f",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 16,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "5749317ecac28bdf",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 18,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "6c0f5870bbd043c4",
+        "type": "ui_spacer",
+        "z": "ad8005ae4650a3a8",
+        "name": "spacer",
+        "group": "e39f9c2121fa5f1b",
+        "order": 20,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "ad5eec934e46c1d5",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:4840",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "e39f9c2121fa5f1b",
+        "type": "ui_group",
+        "name": "Rastreabilidade e Produção",
+        "tab": "c81b037c2f984d65",
+        "order": 1,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aa45ad6991e00160",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:4841",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "506a385c5d153cfa",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c81b037c2f984d65",
+        "type": "ui_tab",
+        "name": "Indústria 4.0 & IOT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
